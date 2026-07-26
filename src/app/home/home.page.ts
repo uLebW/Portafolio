@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+onClick() {
+throw new Error('Method not implemented.');
+}
 
   constructor() {}
 

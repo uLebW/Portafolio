@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="all">
+
+    <aside class="Sidebar">
+      <ion-buttons class="botones">
+        <ion-button (click)="onClick()">
+          <ion-icon slot="icon-only" name="home"></ion-icon>
+        </ion-button>
+
+
+        <ion-button (click)="onClick()">
+          <ion-icon slot="icon-only" name="card"></ion-icon>
+        </ion-button>
+
+
+        <ion-button (click)="onClick()">
+          <ion-icon slot="icon-only" name="terminal"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </aside>
+
+
+    <main class="content">
+      dadads
+    </main>
   </div>
+
 </ion-content>
