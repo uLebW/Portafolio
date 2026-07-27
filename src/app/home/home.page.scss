@@ -51,13 +51,32 @@
 
 .divSup{
   display: grid;
-  background-color: aquamarine;
   grid-template-areas: 
   "a b";
+
+  #tetto{
+    display: grid;
+    grid-template-areas: 
+    "a"
+    "b";
+    align-content: center;
+    justify-content: center;
+    row-gap: 25%;
+  }
+
+  #animacion{
+    align-content: center;
+    justify-content: center;
+  }
 }
 
 .divInf{
-  background-color: beige;
+
+  padding: 40px;
+
+  #desc{
+    
+  }
 }
 
 .content {
