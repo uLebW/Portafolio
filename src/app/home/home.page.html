@@ -4,17 +4,17 @@
 
     <aside class="Sidebar">
       <ion-buttons class="botones">
-        <ion-button (click)="onClick()">
+        <ion-button *ngIf="!(ocultarBtn$ | async)">
           <ion-icon slot="icon-only" name="home"></ion-icon>
         </ion-button>
 
 
-        <ion-button (click)="onClick()">
+        <ion-button [routerLink]="['/trabajos']">
           <ion-icon slot="icon-only" name="card"></ion-icon>
         </ion-button>
 
 
-        <ion-button (click)="onClick()">
+        <ion-button  [routerLink]="['/habilidades']">
           <ion-icon slot="icon-only" name="terminal"></ion-icon>
         </ion-button>
       </ion-buttons>

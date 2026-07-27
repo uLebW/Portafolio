@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+
+  <div class="all">
+
+    <aside class="Sidebar">
+      <ion-buttons class="botones">
+        <ion-button [routerLink]="['/home']" >
+          <ion-icon slot="icon-only" name="home"></ion-icon>
+        </ion-button>
+
+
+        <ion-button *ngIf="!(ocultarBtn$ | async)">
+          <ion-icon slot="icon-only" name="card"></ion-icon>
+        </ion-button>
+
+
+        <ion-button [routerLink]="['/habilidades']" >
+          <ion-icon slot="icon-only" name="terminal"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </aside>
+
+
+    <main class="content">
+
+    </main>
+  </div>
+
+</ion-content>

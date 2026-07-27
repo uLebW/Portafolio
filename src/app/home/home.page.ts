@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RutaChecker } from '../services/ruta-checker';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,14 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
-onClick() {
-throw new Error('Method not implemented.');
-}
+
+  //chequeador de ruta asi sexchad
+  private routeCh = inject(RutaChecker);
+  ocultarBtn$ = this.routeCh.ocultarBtn$;
 
   constructor() {}
+
+
+
 
 }
