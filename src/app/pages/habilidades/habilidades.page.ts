@@ -13,28 +13,34 @@ export class HabilidadesPage implements OnInit {
 
   protected Stack = [
     {
-      icono: "https://img.icons8.com/?size=100&id=5NOAGB6F7wM4&format=png&color=000000",
-      titulo: "Ionic"
+      icono: "https://img.icons8.com/?size=100&id=107561&format=png&color=FFFFFF",
+      titulo: "Ionic",
+      isFlipp: false
     }
     , {
-      icono: "https://img.icons8.com/?size=100&id=t9oCxEN7McHZ&format=png&color=000000",
-      titulo: "NODE-Js"
+      icono: "https://img.icons8.com/?size=100&id=t9oCxEN7McHZ&format=png&color=FFFFFF",
+      titulo: "NODE-Js",
+      isFlipp: false
     }
     , {
-      icono: "https://img.icons8.com/?size=100&id=23028&format=png&color=000000",
-      titulo: "HTML5"
+      icono: "https://img.icons8.com/?size=100&id=23028&format=png&color=FFFFFF",
+      titulo: "HTML5",
+      isFlipp: false
     }
     , {
-      icono: "https://img.icons8.com/?size=100&id=38272&format=png&color=000000",
-      titulo: "CSS3"
+      icono: "https://img.icons8.com/?size=100&id=38272&format=png&color=FFFFFF",
+      titulo: "CSS3",
+      isFlipp: false
     }
     , {
       icono: "https://img.icons8.com/?size=100&id=90519&format=png&color=000000",
-      titulo: "Java SpringBoot"
+      titulo: "Java SpringBoot",
+      isFlipp: false
     },
     {
-      icono:"https://img.icons8.com/?size=100&id=grZaE9tjqDyr&format=png&color=000000",
-      titulo:"Supabase"
+      icono:"https://img.icons8.com/?size=100&id=FSy9ge3Q95lL&format=png&color=FFFFFF",
+      titulo:"Supabase",
+      isFlipp: false
     }]
   constructor() { }
 

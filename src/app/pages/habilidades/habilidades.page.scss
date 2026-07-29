@@ -11,10 +11,11 @@
 .Sidebar {
   position: relative;
   height: 100%;
-  width: clamp(50px,100px, 200px);
-  background: linear-gradient(90deg,rgba(38, 13, 61, 0.664) 25%,rgba(150, 68, 212, 0.459));
+  width: clamp(50px, 100px, 200px);
+  background: linear-gradient(90deg, rgba(38, 13, 61, 0.664) 25%, rgba(150, 68, 212, 0.459));
+
   @media (max-width:746px) {
-     background: linear-gradient(180deg,rgba(38, 13, 61, 0.664) 25%,rgba(150, 68, 212, 0.459));
+    background: linear-gradient(180deg, rgba(38, 13, 61, 0.664) 25%, rgba(150, 68, 212, 0.459));
     width: 100%;
     height: 10%;
 
@@ -42,41 +43,97 @@
 
 
 
-.content{
+.content {
   width: 100%;
   height: 1005;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  .objeto{
-    height: max-content;
+}
 
-    //wea pal calculo del tamaño
-    flex: 0 1 calc(20% - 15px);
-    min-width: 220px;
 
-    display: grid;
-    grid-template-rows: auto 1fr;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 2px 2px rgb(65, 36, 112);
+/* --- Nuevos estilos para la Carta 3D --- */
 
-    h3 {
-      color: wheat;
-      margin: 0;
-      padding: 10px 5px;
-      text-align: center;
-      width: 100%;
-    }
+/* 1. El contenedor principal da la perspectiva y maneja el hover general */
+.objeto {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /* Necesario para el 3D */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
 
-    ion-img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-      display: block;
-    }
-  }
+/* Efecto de escala y sombra en toda la carta al pasar el mouse */
+.objeto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(65, 36, 112, 0.637);
+  border-radius: 15px; /* Mantiene la sombra redondeada */
+}
+
+/* 2. El contenedor interno que realmente rota */
+.objeto-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Esta es la clase que se activa con el clic */
+.objeto.is-flipped .objeto-inner {
+  transform: rotateY(180deg);
+}
+
+/* 3. Estilos comunes para ambas caras */
+.objeto-front,
+.objeto-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Oculta la cara cuando está de espaldas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* 4. Estilos de la cara Frontal */
+.objeto-front {
+  background: #111;
+}
+
+.objeto-front ion-img {
+  color: #0ff;
+  position: relative;
+  z-index: 2;
+}
+
+
+.objeto-front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(0deg, transparent, transparent 30%, rgba(202, 219, 219, 0.795));
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.objeto:hover .objeto-front::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+/* 5. Estilos de la cara Trasera */
+.objeto-back {
+  background: #8a5cf600; 
+  color: white;
+  transform: rotateY(180deg); /* Volteada por defecto para quedar de espaldas */
+  
 }

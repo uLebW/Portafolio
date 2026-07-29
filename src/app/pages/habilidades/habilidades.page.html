@@ -22,12 +22,21 @@
 
 
     <main class="content">
-      <div class="objeto" *ngFor="let logo of Stack">
-        <h3 >{{logo.titulo}}</h3>
+      <div class="objeto" *ngFor="let logo of Stack"
+      (click)="logo.isFlipp = !logo.isFlipp"
+      [class.is-flipped]="logo.isFlipp">
+        
+        <div class="objeto-inner">
+          <div class="objeto-front">
+            <ion-img [src]="logo.icono"></ion-img>
+          </div>
 
-        <ion-img [src]="logo.icono"></ion-img>
+          <div class="objeto-back">
+            <h3>{{logo.titulo}}</h3>
+          </div>
+        </div>
+
       </div>
-
     </main>
   </div>
 
